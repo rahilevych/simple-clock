@@ -13,7 +13,56 @@ body {
 
 .container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    position: relative;
+    display: flex;
+    align-items: center;
     gap: 60px;
+    justify-content: center;
+    height: 500px;
+    width: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 900px;
+    background-image: conic-gradient(transparent, transparent, transparent, #9D00FF);
+    animation: animate 6s linear infinite;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 900px;
+    background-image: conic-gradient( transparent, transparent, transparent, #FF00FF);
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.clock span {
+    position: absolute;
+    inset: 5px;
+    background: rgba(3, 3, 15);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .circle {
@@ -24,6 +73,7 @@ body {
     color: white;
     width: 150px;
     height: 150px;
+    z-index: 3;
 }
 
 .time {
@@ -40,7 +90,7 @@ body {
 }
 
 .circle svg circle {
-    stroke: rgb(0, 87, 183);
+    stroke: white;
     stroke-width: 3px;
     width: 100%;
     height: 100%;
@@ -49,8 +99,9 @@ body {
 }
 
 .circle svg circle:nth-child(2) {
-    stroke: rgb(255, 221, 0);
+    stroke: var(--clr);
     stroke-dasharray: 440;
+    box-shadow: 0 0 20px var(--clr);
 }
 
 .dots {
@@ -67,8 +118,8 @@ body {
     position: absolute;
     width: 15px;
     height: 15px;
-    background: rgb(255, 221, 0);
+    background: var(--clr);
     border-radius: 50%;
     top: -2px;
-    box-shadow: 0 0 20px rgb(255, 221, 0);
+    box-shadow: 0 0 20px var(--clr);
 }
