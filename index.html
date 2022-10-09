@@ -12,8 +12,11 @@
 <body>
     <div class="container">
         <div class="clock">
-            <span></span>
-            <div class="hours circle" style="--clr:#00FFFF;">
+            <span class="clock-span"></span>
+            <div class="clock__button">
+                <input type="checkbox" class="clock-mode">
+            </div>
+            <div class="hours circle" style="--clr:#FF00FF;">
                 <div class="dots hours__dot"></div>
                 <svg>
                 <circle  cx="70" cy="70" r="70" ></circle>
@@ -40,6 +43,7 @@
                 <div class="seconds__time time"></div>
                 <div class="seconds__text text"></div>
             </div>
+            <span class="time-part"></span>
         </div>
     </div>
 
