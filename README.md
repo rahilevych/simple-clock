@@ -1,2 +1,2 @@
 # simple-clock
-https://github.com/rahilevych/simple-clock/
+https://rahilevych.github.io/simple-clock/
